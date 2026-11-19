@@ -1,9 +1,13 @@
+[![make.fun · gta6-cover-art-01](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/nguyenhuong74/gta6-cover-art-01/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/nguyenhuong74/gta6-cover-art-01/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+
 # Vice City Cover Studio
 
 A free, offline web app that turns your photo and a caption into multi-panel
 cover art in the style of GTA 6 posters — a Vice City sunset or neon colour
 grade, bold caption lettering, exported as a PNG to share. Built for the
-make.fun bounty `gta6-cover-art-01`.
+[gta6-cover-art-01 bounty on make.fun](https://make.fun/bounty/gta6-cover-art-01).
 
 ## How to use it
 
