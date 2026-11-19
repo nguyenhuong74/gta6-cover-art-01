@@ -1,0 +1,162 @@
+/* Vice City Cover Studio — editor chrome: dark neon panels, sunset accents.
+   The cover art itself is drawn on canvas (src/cover.js); this sheet only
+   styles the controls around it. */
+:root {
+  --bg: #12081f;
+  --panel: #1e1032;
+  --panel-2: #2a1844;
+  --line: #3d2b5c;
+  --text: #f4efff;
+  --muted: #b9a8d8;
+  --pink: #ff5da2;
+  --teal: #37e6d4;
+  --gold: #ffb347;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+header {
+  padding: 18px 24px 6px;
+  background: linear-gradient(90deg, #2a1a5e, #7a2d7d 55%, #e85d6a);
+}
+header h1 {
+  margin: 0;
+  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+header p { margin: 2px 0 12px; color: #ffe9f4; }
+.app {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  padding: 18px 24px 28px;
+  align-items: start;
+}
+.controls {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.controls h2 {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.controls label { display: block; font-size: 13px; color: var(--muted); }
+.controls input[type="text"],
+.controls select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--pink); }
+.chip.on {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  font-weight: 700;
+}
+.chip[data-grade]::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--swatch, #888);
+  margin-right: 6px;
+}
+.slots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.slot {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.slot span { display: block; margin-bottom: 6px; color: var(--text); font-weight: 700; }
+.slot input { width: 100%; font-size: 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+button.action {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--teal);
+  color: #0b1035;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+button.action.primary { background: var(--pink); color: #fff; font-size: 16px; }
+button.action.ghost { background: var(--panel-2); color: var(--text); border: 1px solid var(--line); }
+button.action:hover { filter: brightness(1.12); }
+.check { display: flex; gap: 8px; align-items: center; color: var(--text); }
+.check input { width: 16px; height: 16px; }
+input[type="range"] { width: 100%; accent-color: var(--pink); }
+#panelLabel { font-size: 12px; color: var(--muted); }
+#status { min-height: 1.2em; font-size: 13px; color: var(--teal); }
+.stage {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.stage p { margin: 0; color: var(--muted); font-size: 13px; text-align: center; }
+#preview {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  cursor: crosshair;
+  touch-action: none;
+}
+footer { padding: 0 24px 22px; color: var(--muted); font-size: 12px; }
+/* Screenshot scene: the cover alone, edge to edge. */
+body.shot-cover { background: #000; }
+body.shot-cover header,
+body.shot-cover .controls,
+body.shot-cover footer,
+body.shot-cover .stage p { display: none; }
+body.shot-cover .app { display: block; padding: 0; }
+body.shot-cover .stage { background: none; border: 0; border-radius: 0; padding: 0; }
+body.shot-cover #preview {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+@media (max-width: 860px) {
+  .app { grid-template-columns: 1fr; }
+}

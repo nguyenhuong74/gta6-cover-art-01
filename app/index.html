@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <h1>Vice City Cover Studio</h1>
+  <p>Your photo + a caption, made into multi-panel cover art with a Vice City sunset or neon grade. Photos never leave your machine.</p>
+</header>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h2>1 · Layout</h2>
+    <div class="chips" id="layouts"></div>
+
+    <h2>2 · Photos</h2>
+    <div class="slots" id="slots"></div>
+    <div class="row">
+      <button id="sample" class="action ghost" type="button">Load sample photos</button>
+      <button id="fillOne" class="action ghost" type="button">Fill all panels with Photo 1</button>
+    </div>
+    <label class="check"><input id="fillAll" type="checkbox" checked> One photo fills every panel</label>
+    <label for="zoom">Zoom selected panel</label>
+    <input id="zoom" type="range" min="1" max="2.5" step="0.05" value="1">
+    <div class="row">
+      <button id="resetCrop" class="action ghost" type="button">Reset crop</button>
+      <span id="panelLabel">Panel 1 of 4 — drag the preview to pan, use Zoom to crop</span>
+    </div>
+
+    <h2>3 · Words</h2>
+    <label>Caption <input id="caption" type="text" maxlength="40" value="VICE SUNSET"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="48" value="Neon Coast Nights"></label>
+    <label>Lettering
+      <select id="lettering">
+        <option value="sunset">Sunset gradient</option>
+        <option value="solid">Solid white</option>
+        <option value="outline">Neon outline</option>
+      </select>
+    </label>
+
+    <h2>4 · Colour grade</h2>
+    <div class="chips" id="grades"></div>
+    <label class="check"><input id="grain" type="checkbox" checked> Film grain + vignette</label>
+
+    <h2>5 · Size &amp; export</h2>
+    <div class="chips" id="sizes"></div>
+    <button id="export" class="action primary" type="button">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="stage" aria-label="Live preview">
+    <canvas id="preview" width="560" height="560" aria-label="Live cover preview"></canvas>
+    <p>Click a panel to select it, then drag it to pan the photo inside the panel.</p>
+  </section>
+</main>
+<footer>Original art only: every panel, grade and letter is drawn by this app. No game logo, artwork, character or font is used. Sample photos are procedurally drawn by the app itself.</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
